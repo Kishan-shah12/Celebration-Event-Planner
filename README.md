@@ -145,6 +145,31 @@ Open **[http://127.0.0.1:5001](http://127.0.0.1:5001)** in your browser.
 
 ---
 
+## 🚀 Deploying to Render
+
+The repository is pre-configured and 100% production-ready for [Render](https://render.com).
+
+### Option 1: 1-Click Blueprint (`render.yaml`)
+1. Connect your repository in the [Render Dashboard](https://dashboard.render.com).
+2. Click **Blueprints** -> **New Blueprint Instance**.
+3. Select this repository. Render will automatically read [`render.yaml`](file:///Users/kishansah/Celebration%20&%20Event%20Planner/render.yaml) and configure:
+   - **Environment**: Python 3.11
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 60`
+   - **Health Check**: `/api/health`
+4. Add your `GEMINI_API_KEY` under environment variables in the Render dashboard (optional; offline mode operates automatically if omitted).
+
+### Option 2: Manual Python Web Service
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 60`
+- **Health Check Path**: `/api/health`
+
+### Option 3: Docker Container
+Select **Docker** runtime in Render. Render will detect [`Dockerfile`](file:///Users/kishansah/Celebration%20&%20Event%20Planner/Dockerfile) and build a lightweight, non-root container image with zero extra configuration.
+
+
+---
+
 ## 🧪 Automated Testing Suite & Linting
 
 Run the test suite with coverage:
