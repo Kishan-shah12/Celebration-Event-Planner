@@ -23,10 +23,6 @@
 - [API Reference](#-api-reference)
 
 ---
-
-## 🌟 Executive Overview
-Planora is engineered to upgrade celebration and event planning by bridging mathematical certainty with generative creativity. Using the benchmark repository [`Manasa-L-Hegde/celebration-planner`](https://github.com/Manasa-L-Hegde/celebration-planner) (benchmark reported score: 97.29/100) as an engineering reference, Planora expands functionality, security, accessibility, and financial precision to target an evaluation score **>= 98/100**.
-
 ### Scoring Dimension Enhancements
 | Dimension | Reference Benchmark | Planora Upgrade | Verification Path |
 |---|---|---|---|
